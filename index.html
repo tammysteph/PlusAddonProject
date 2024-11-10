@@ -13,8 +13,7 @@
       <h1>World Clock</h1>
       <select name="" id="citySelection">
         <option value="">Select City</option>
-        <option value="current">Cureent</option>
-
+        <option value="current">Current</option>
         <option value="Europe/Rome">Rome</option>
         <option value="Europe/London">London</option>
         <option value="Europe/France">France</option>
@@ -23,9 +22,17 @@
       </select>
 
       <div class="citySection" id="citySection">
-        <div class="cityDisplay" id="rome">
+        <div class="cityDisplay" id="localTime">
           <div class="blockOne">
-            <h2>Rome</h2>
+            <h2>Local Time</h2>
+            <p class="date"></p>
+          </div>
+          <div class="time"></div>
+        </div>
+
+        <div class="cityDisplay" id="tokyo">
+          <div class="blockOne">
+            <h2>Tokyo</h2>
             <p class="date"></p>
           </div>
           <div class="time"></div>

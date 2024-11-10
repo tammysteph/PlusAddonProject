@@ -63,6 +63,11 @@ select {
 .time small {
 }
 
+.backLink {
+  font-size: 10px;
+  padding: 10px;
+}
+
 footer {
   text-align: center;
   margin: 20px;

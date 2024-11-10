@@ -1,12 +1,27 @@
 function updateTime() {
-  //Rome
-  let romeElement = document.querySelector("#rome");
-  if (romeElement) {
-    let romeElementDate = romeElement.querySelector(".date");
-    let romeElementTime = romeElement.querySelector(".time");
-    let romeTime = moment().tz("Europe/Rome");
-    romeElementDate.innerHTML = romeTime.format("MMM Do YY");
-    romeElementTime.innerHTML = romeTime.format("h:mm:ss [<small>]A[</small>]");
+  // Local Time
+  let localTimeElement = document.querySelector("#localTime");
+  if (localTimeElement) {
+    let localTimeElementDate = localTimeElement.querySelector(".date");
+    let localTimeElementTime = localTimeElement.querySelector(".time");
+    let localTimeZone = moment.tz.guess();
+    let localTimeTime = moment().tz(localTimeZone);
+    localTimeElementDate.innerHTML = localTimeTime.format("MMM Do YY");
+    localTimeElementTime.innerHTML = localTimeTime.format(
+      "h:mm:ss [<small>]A[</small>]"
+    );
+  }
+
+  //Tokyo
+  let tokyoElement = document.querySelector("#tokyo");
+  if (tokyoElement) {
+    let tokyoElementDate = tokyoElement.querySelector(".date");
+    let tokyoElementTime = tokyoElement.querySelector(".time");
+    let tokyoTime = moment().tz("Asia/Tokyo");
+    tokyoElementDate.innerHTML = tokyoTime.format("MMM Do YY");
+    tokyoElementTime.innerHTML = tokyoTime.format(
+      "h:mm:ss [<small>]A[</small>]"
+    );
   }
 
   //London
@@ -32,7 +47,7 @@ function updateCity(event) {
   let cityTime = moment().tz(cityTimeZone);
   let citySectionElement = document.querySelector("#citySection");
   citySectionElement.innerHTML = `
-  <div class="cityDisplay" id="rome">
+  <div class="cityDisplay" id="cityDisplay">
           <div class="blockOne">
             <h2>${cityName}</h2>
             <p class="date">${cityTime.format("MMM Do YY")}</p>
@@ -42,11 +57,12 @@ function updateCity(event) {
           )} <small>${cityTime.format("A")}</small>
         </div>
         </div>
+    <a href="index.html" class="backLink">Back to All Cities</a>
   `;
 }
 
 updateTime();
-/// setInterval(updateTime, 1000);
+setInterval(updateTime, 1000);
 
 let citySelectElement = document.querySelector("#citySelection");
 citySelectElement.addEventListener("change", updateCity);
