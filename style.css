@@ -1,7 +1,69 @@
 body {
-  text-align: center;
+  background-color: #5dbbc2;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container {
+  max-width: 550px;
+  margin: 25px auto;
+  background-color: #b6e0e3;
+  border-radius: 15px;
+  padding: 20px 5px;
+  box-shadow: 7px 5px 22px rgba(0, 0, 0, 0.2);
 }
 
 h1 {
-  color: brown;
+  color: rgb(33, 103, 106);
+  text-align: center;
+}
+
+select {
+  text-align: center;
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 8px;
+  box-shadow: 7px 5px 22px rgba(0, 0, 0, 0.2);
+}
+
+.cityDisplay {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 5px;
+  border-bottom: 1px dashed grey;
+  padding: 10px;
+}
+
+.cityDisplay:last-child {
+  border: none;
+}
+
+.blockOne {
+  padding-left: 30px;
+}
+
+.date {
+  opacity: 0.6;
+  font-size: 12px;
+}
+
+.cityDisplay h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.time {
+  font-size: 26px;
+  font-weight: 500;
+  padding-right: 30px;
+}
+
+.time small {
+}
+
+footer {
+  text-align: center;
+  margin: 20px;
 }
